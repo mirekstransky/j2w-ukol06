@@ -17,9 +17,6 @@
                     <button type="submit" class="btn btn-success">Uložit</button>
                 [/#if]
             </div>
-
-
-
         [/@form.form]
 
         [@c.back /]

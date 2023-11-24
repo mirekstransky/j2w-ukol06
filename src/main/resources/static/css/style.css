@@ -9,7 +9,9 @@ html {
 }
 
 body {
-    font: 10pt 'Raleway', sans-serif;
+    /*font: 10pt 'Raleway', sans-serif;*/
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
     color: black;
     margin: 0;
     min-height: 100vh;
@@ -32,7 +34,6 @@ a {
     width: 36em;
     height: 16em;
     border: 1px solid gray;
-    background-color: white;
     margin: 1em;
     padding: 1.5em;
     box-shadow: 5px 5px 10px black;
@@ -40,7 +41,7 @@ a {
     flex-direction: column;
     justify-content: space-between;
     transition: box-shadow 0.2s, transform 0.2s;
-
+    background-color: rgb(242, 248, 255);
     position: relative;
 }
 
@@ -163,3 +164,33 @@ input {
     background-color: #86efac;
 }
 
+.row input{
+    /*border-radius: 5px;*/
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 5px;
+    border:1px solid rgb(168, 168, 168);
+    background-color: white;
+}
+
+.vizitka{
+    border-radius: 20px;
+}
+
+.btn-back{
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    width: 36em;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-back:hover{
+    background-color: #bfdbfe;
+    color: black;
+}

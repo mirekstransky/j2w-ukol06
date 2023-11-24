@@ -11,7 +11,9 @@
         <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="icon" type="image/png" href="/images/favicon.png">
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
     </head>
     <body>
     [#nested]
@@ -20,7 +22,5 @@
 [/#macro]
 
 [#macro back]
-    <nav>
-        <a href="/">◂ zpět na seznam</a>
-    </nav>
+        <a href="/" class="btn-back">Zpět na seznam</a>
 [/#macro]
