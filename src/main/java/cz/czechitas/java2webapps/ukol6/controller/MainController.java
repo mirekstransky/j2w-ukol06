@@ -4,10 +4,10 @@ import cz.czechitas.java2webapps.ukol6.entity.Vizitka;
 import cz.czechitas.java2webapps.ukol6.repository.VizitkaRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
@@ -68,17 +68,17 @@ public class MainController {
         vizitkaRepository.deleteById(id);
         return "redirect:/";
     }
-
-    @GetMapping("/change/{id:[0-9]+}")//------------------------------------------------>
-    public ModelAndView upravit(@PathVariable int id) {
+    @GetMapping("/change/{id:[0-9]+}")
+    public Object uprav(ModelAndView model, @PathVariable int id) {
         Optional<Vizitka> vizitka = vizitkaRepository.findById(id);
         if (vizitka.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            //throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
-        return new ModelAndView("formular")
-                .addObject("vizitka", vizitka.get());
+        model.setViewName("formular");
+        model.addObject("vizitka", vizitka.get());
+        return model;
     }
-
     @PostMapping("/change/{id:[0-9]+}")
     public String upravit(@ModelAttribute("vizitka") @Valid Vizitka vizitka, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
