@@ -40,6 +40,8 @@ a {
     flex-direction: column;
     justify-content: space-between;
     transition: box-shadow 0.2s, transform 0.2s;
+
+    position: relative;
 }
 
 .vizitka--nova {
@@ -136,3 +138,28 @@ input {
 .error {
     color: red;
 }
+.btn{
+    padding: 10px 20px;
+    border-radius: 20px;
+    position: absolute;
+}
+.btn-danger{
+    background-color: #f43f5e;
+    cursor: pointer;
+    top: -20px;
+    left: -20px;
+}
+.btn-success{
+    background-color: #22c55e;
+    cursor: pointer;
+    top: -20px;
+    right: -20px;
+}
+
+.btn-danger:hover{
+    background-color: #fca5a5;
+}
+.btn-success:hover{
+    background-color: #86efac;
+}
+
