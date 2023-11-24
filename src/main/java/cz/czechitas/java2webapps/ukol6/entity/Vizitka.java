@@ -33,9 +33,11 @@ public class Vizitka {
 
     @Length(max = 100)
     @NotBlank
+    @Pattern(regexp = "\\d{5}")
     private String psc;
 
     @Length(max = 100)
+    @NotBlank
     @Email
     private String email;
 
@@ -44,7 +46,6 @@ public class Vizitka {
     private String telefon;
 
     @Length(max = 100)
-    @NotBlank
     private String web;
 
     public Vizitka() {
