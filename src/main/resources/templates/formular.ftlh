@@ -1,8 +1,8 @@
 [#ftl]
 [@c.page]
     <div class="detail">
-        [@form.form class="vizitka" bind="vizitka"]
-            [@form.input name="jmeno" label="Jméno" maxlength="100" required="required" /]
+        [@form.form method="post" bind="vizitka" class="vizitka" ]
+            [@form.input name="cele_jmeno" label="Celé jméno" maxlength="100" required="required" /]
             [@form.input name="firma" label="Firma" maxlength="100" required="required" /]
             [@form.input name="ulice" label="Ulice a čísla" maxlength="100" required="required" /]
             [@form.input name="obec" label="Obec" maxlength="100" required="required" /]
@@ -11,8 +11,15 @@
             [@form.input name="telefon" label="Telefon *" maxlength="100" required="required" type="tel" /]
             [@form.input name="web" label="Web *" maxlength="100" required="required" type="url" /]
             <div class="form-controls">
-                <button type="submit">Odeslat</button>
+                [#if vizitka.id == 0]
+                    <button type="submit" class="btn btn-success">Přidat</button>
+                [#else ]
+                    <button type="submit" class="btn btn-success">Uložit</button>
+                [/#if]
             </div>
+
+
+
         [/@form.form]
 
         [@c.back /]
